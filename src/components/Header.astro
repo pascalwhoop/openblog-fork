@@ -2,29 +2,28 @@
 import HeaderLink from '@/components/HeaderLink'
 import TwitterIcon from '@/components/icons/TwitterIcon'
 import GithubIcon from '@/components/icons/GithubIcon'
+import LinkedInIcon from '@/components/icons/linkedinIcon'
 import MenuIcon from './icons/MenuIcon.astro'
 import Search from '@/components/Search'
 import TagIcon from './icons/TagIcon.astro'
 import ToggleTheme from './ToggleTheme.astro'
+import { SOCIALS } from '@/data/site.config'
+// import ec_logo from '../assets/images/everycure_logo_heart_only.png';
+import ec_logo from '../assets/images/everycure_blue@4x.png'
+import { Image } from 'astro:assets'
 
-// ADD YOUR SOCIAL NETWORKS HERE
-const SOCIALNETWORKS = [
-	{
-		name: 'Github',
-		url: 'https://github.com/danielcgilibert/blog-template',
-		icon: GithubIcon
-	},
-
-	{
-		name: 'Twitter',
-		url: 'https://github.com/danielcgilibert/blog-template',
-		icon: TwitterIcon
-	}
-]
+// Use the SOCIALS from site.config.ts
+const SOCIALNETWORKS = SOCIALS.filter((social) => social.active).map((social) => ({
+	name: social.name,
+	url: social.href,
+	icon:
+		social.name === 'Github' ? GithubIcon : social.name === 'LinkedIn' ? LinkedInIcon : TwitterIcon
+}))
 ---
 
 <header class='relative flex items-center h-12 font-semibold'>
-	<a class='text-lg mr-auto' href='/'>Home</a>
+	<!-- <a class='text-lg mr-auto' href='/'>Home</a> -->
+	<Image src={ec_logo} alt='ec logo' class='mr-auto h-12 w-auto' />
 
 	<div
 		id='astro-header-drawer'
@@ -57,13 +56,15 @@ const SOCIALNETWORKS = [
 		<div>
 			<Search />
 		</div>
-		<ToggleTheme />
+		<!-- TODO: Need White logos to support dark mode -->
+		<!-- <ToggleTheme /> -->
 		<button id='astro-header-drawer-button' type='button' class='md:ml-6 md:hidden'>
 			<MenuIcon />
 			<span class='sr-only'>Show Menu</span>
 		</button>
 	</div>
 </header>
+
 <script>
 	document.addEventListener('click', (event) => {
 		const menu = document.getElementById('astro-header-drawer')
