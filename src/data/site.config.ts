@@ -11,6 +11,7 @@ export type Site = {
 	ogImage?: Image
 	lightAndDarkMode: boolean
 	postPerPage: number
+	shareMessage: string
 }
 
 export const siteConfig: Site = {
@@ -23,7 +24,8 @@ export const siteConfig: Site = {
 		alt: 'Every Cure - Unlocking the hidden potential of existing drugs'
 	},
 	lightAndDarkMode: true,
-	postPerPage: 5
+	postPerPage: 20,
+	shareMessage: 'I just read this article on Every Cure Blog: '
 }
 
 export const LOCALE = ['en-EN'] // set to [] to use the environment default
