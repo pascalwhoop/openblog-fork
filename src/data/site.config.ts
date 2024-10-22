@@ -6,7 +6,7 @@ export type Image = {
 export type Site = {
 	website: string
 	author: string
-	desc: string
+	description: string
 	title: string
 	ogImage?: Image
 	lightAndDarkMode: boolean
@@ -17,7 +17,7 @@ export type Site = {
 export const siteConfig: Site = {
 	website: 'https://everycure.org',
 	author: 'Every Cure',
-	desc: 'Unlocking the hidden potential of existing drugs to save lives',
+	description: 'Unlocking the hidden potential of existing drugs to save lives',
 	title: 'Every Cure Blog',
 	ogImage: {
 		src: '/opengraph-image.jpg',
