@@ -1,9 +1,10 @@
 - [x] update site.config.ts
 - [x] update astro.config.mjs
-- [ ] update favicon
+- [x] update favicon
 - [ ] update robots.txt
 - [ ] update open-graph image to be our logo
 - [x] add our necessary categories: Tech, Medical, Company
 - [ ] update footer with our copyright
 - [ ] delete dummy content
 - [ ] add our first post about how we have built this blog with AI
+- [ ] implement color scheme (Primary color: RGB 0, 32, 91 / #00205B)

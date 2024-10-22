@@ -21,7 +21,7 @@ export async function getStaticPaths({ paginate }: any) {
 			params: {
 				category: sluglify(category.toLowerCase())
 			},
-			pageSize: siteConfig.paginationSize
+			pageSize: siteConfig.postPerPage
 		})
 	})
 }
