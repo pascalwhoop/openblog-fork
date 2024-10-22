@@ -4,11 +4,14 @@ import Shape from './icons/Shape.astro'
 type Props = {
 	title: string
 }
+import { Image } from 'astro:assets'
+import ec_logo from '../assets/images/everycure_blue@4x.png'
 
 const { title } = Astro.props
 ---
 
 <div class='flex justify-start items-center gap-2 title'>
-	<Shape />
-	<Title>{title}</Title>
+	<!-- <Shape /> -->
+	<!-- <Image src={ec_logo} alt="ec logo" class="w-auto h-12"  /> -->
+	<Title>Blog</Title>
 </div>
